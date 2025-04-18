@@ -1,0 +1,101 @@
+/* Table styling */
+.dtable {
+    border: none;
+    flex: 1; /* Takes up available space */
+    max-width: 80%; /* Adjust table width for more balanced look */
+}
+
+th, td {
+    border: 1px solid #cbd5e0;  /* Soft light gray border */
+    padding: 12px;
+    text-align: center;
+    color: #2d3748;  /* Dark gray text */
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    background: #ffffff;  /* White background for table */
+    border-radius: 5px; /* Rounded corners for table */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+table thead {
+    background: #1a202c;  /* Dark navy blue header */
+    color: #ffffff;  /* White text in header */
+    font-weight: bold;
+}
+
+table tbody {
+    background: #f9fafb;  /* Very light gray background for rows */
+}
+
+table tbody tr:hover {
+    background-color: #e2e8f0;  /* Light cool gray on row hover */
+}
+
+/* Body styling with clean gradient background */
+body {
+    background: #f3f4f6;  /* Very light gray background */
+    color: #2d3748;  /* Dark gray text for readability */
+    font-family: 'Arial', sans-serif;  /* Professional sans-serif font */
+    padding: 2rem;
+}
+
+/* Input and textarea styling */
+input, textarea {
+    background: #ffffff;  /* White background */
+    border: 1px solid #cbd5e0;  /* Light gray border */
+    border-radius: 5px;
+    padding: 12px;
+    color: #2d3748;  /* Dark gray text */
+    font-size: 1rem;
+}
+
+input, textarea:focus {
+    border-color: #4a5568;  /* Slightly darker gray on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 85, 104, 0.2);  /* Subtle shadow for focus */
+}
+
+/* Button styling */
+.neon-button {
+    background: #1a202c;  /* Dark navy blue background */
+    color: #ffffff;
+    border: 2px solid #4a5568;  /* Darker gray border */
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.neon-button:hover {
+    background: #2d3748;  /* Darker blue-gray on hover */
+    border-color: #2d3748;  /* Matching hover border */
+}
+
+/* File input styling */
+input[type="file"] {
+    background: #f9fafb;  /* Light gray background */
+    border: 1px solid #cbd5e0;  /* Soft light gray border */
+    padding: 10px;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    background-color: #e2e8f0;  /* Light cool gray on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .grid-form {
+        grid-template-columns: 1fr;
+    }
+    .dhead {
+        font-size: 1.8rem;
+    }
+}

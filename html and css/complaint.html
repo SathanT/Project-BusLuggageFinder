@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support - Complaint Form</title>
+    <link rel="stylesheet" href="complaint.css">
+</head>
+<body>
+
+    <h1 class="dhead">Complaint Page</h1>
+
+    <div class="form-container">
+        <form class="grid-form" onsubmit="submitComplaint(); return false;">
+            <table>
+                <tr>
+                    <td><p>Name</p></td>
+                    <td><input class="int" type="text" placeholder="Enter your name"></td>
+                </tr>
+                <tr>
+                    <td><p>Address</p></td>
+                    <td><textarea class="int address-box" placeholder="Enter your Address"></textarea></td>
+                </tr>
+                <tr>
+                    <td><p>Starting Place</p></td>
+                    <td><input class="int" type="text" placeholder="Enter where you get in"></td>
+                </tr>
+                <tr>
+                    <td><p>Ending Place</p></td>
+                    <td><input class="int" type="text" placeholder="Enter where you get out"></td>
+                </tr>
+                <tr>
+                    <td><p>Where the Luggage</p></td>
+                    <td><input class="int" type="text" placeholder="Where you placed your luggage in the bus"></td>
+                </tr>
+                <tr>
+                    <td><p>Attach your luggage photo if available</p></td>
+                    <td><input type="file"></td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="text-align: center;">
+                    <button type="submit" class="neon-button">Submit Complaint</button>
+                  </td>
+                </tr>
+            </table>
+        </form>
+        <div style="margin-top: 30px;">
+          <h3>📝 Staff Reply:</h3>
+          <div id="reply-box">No reply yet.</div>
+        </div>
+    </div>
+
+<script>
+  function submitComplaint() {
+    const name = document.querySelectorAll('.int')[0].value;
+    const from = document.querySelectorAll('.int')[2].value;
+    const to = document.querySelectorAll('.int')[3].value;
+    const luggage = document.querySelectorAll('.int')[4].value;
+
+    const complaint = {
+      name,
+      from,
+      to,
+      luggage,
+      time: new Date().toLocaleString()
+    };
+
+    localStorage.setItem("userComplaint", JSON.stringify(complaint));
+    alert("Complaint submitted! Now check Bus Details.");
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const reply = localStorage.getItem("adminReply");
+    if (reply && document.getElementById("reply-box")) {
+      document.getElementById("reply-box").textContent = reply;
+    }
+  });
+</script>
+
+</body>
+</html>
+

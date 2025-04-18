@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Details</title>
+    <link rel="stylesheet" href="bu-deatils.css">
+</head>
+<body>
+    <h1>BUS DETAILS</h1>
+    <div>
+    <div class="dtable-container">
+        <div class="dtable">
+         <table >
+             <tr>
+                <th width="150px">properties</th>
+                <th width="200px">information</th> 
+             </tr>
+             <tr>
+                 <td>Bus no</td>
+                 <td>------</td>
+             </tr>
+             <tr>
+                 <td>trip details</td>
+                 <td>-- to ---</td>
+             </tr>
+             <tr>
+                 <td>conducter name</td>
+                 <td>----</td>
+             </tr>
+             <tr>
+                 <td>conducter experience</td>
+                 <td>---</td>
+             </tr>
+             <tr>
+                 <td>driver name</td>
+                 <td>----</td>
+             </tr>
+             <tr>
+                 <td>driver experience</td>
+                 <td>----</td>
+             </tr>
+             <tr>
+                 <td>total no seats</td>
+                 <td>50</td>
+             </tr>
+             <tr>
+                 <td>bus region</td>
+                 <td>----</td>
+             </tr>
+         </table>
+        </div>
+        <div>
+            <div id="complaint-box">
+  <p><strong>Complaint Response:</strong></p>
+  <div id="complaintDetails">No complaint submitted yet.</div>
+  <br>
+  <textarea id="staffReply" placeholder="Write your reply..." rows="3" cols="40"></textarea><br><br>
+  <button onclick="sendReply()" class="neon-button">Send Reply</button>
+</div>
+        </div>
+        </div>
+
+<script>
+  window.onload = () => {
+    const data = localStorage.getItem("userComplaint");
+    if (data) {
+      const complaint = JSON.parse(data);
+      document.getElementById("complaintDetails").innerHTML = `
+        Name: ${complaint.name}<br>
+        From: ${complaint.from} → ${complaint.to}<br>
+        Luggage: ${complaint.luggage}<br>
+        Time: ${complaint.time}
+      `;
+      const reply = localStorage.getItem("adminReply");
+      if (reply) {
+        document.getElementById("staffReply").value = reply;
+      }
+    }
+  };
+
+  function sendReply() {
+    const replyText = document.getElementById("staffReply").value;
+    if (replyText.trim() !== "") {
+      localStorage.setItem("adminReply", replyText);
+      alert("Reply sent to complaint page!");
+    }
+  }
+</script>
+</body>
+</html>

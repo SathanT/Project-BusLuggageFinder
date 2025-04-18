@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & QR Code</title>
+    <link rel="stylesheet" href="first.css">
+</head>
+<body class="loginpage">
+    <div class="container">
+        <!-- Login Box -->
+        <div class="box">
+            <img src="login-icon.png" alt="Login Icon">
+            <h2>Login</h2>
+            <form action="dashboard.html" method="get">
+                <input type="text" name="ticketNumber" placeholder="Enter Ticket Number" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- QR Code Box -->
+        <div class="box">
+            <img src="qr-icon.png" alt="QR Code Icon">
+            <h2>Scan QR Code</h2>
+            <form action="bus-details.html" method="get">
+                <button type="submit">Scan QR</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

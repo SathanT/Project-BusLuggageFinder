@@ -1,0 +1,142 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #e6f7ff;  /* Light professional blue */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header with vibrant hover effect */
+.dhead {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1c3a53;  /* Deep slate blue */
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.dhead:hover {
+    color: #0099cc;  /* Bright, professional blue on hover */
+}
+
+/* Form container with shadow and hover effect */
+.form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+    transform: scale(1.02);  /* Slight zoom on hover */
+}
+
+/* Grid layout for form elements */
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Label group with proper spacing and font */
+.label-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-weight: 600;
+    color: #4b5563;  /* Professional dark grey */
+    font-size: 1.1rem;
+}
+
+/* Input group with spacing between elements */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs and textareas */
+.int, .address-box {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d1d5db;  /* Soft neutral grey */
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus state with vibrant color */
+.int:focus, .address-box:focus {
+    border-color: #00bcd4;  /* Teal blue border on focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.3);  /* Light teal glow */
+}
+
+/* Hover effect on inputs */
+.int:hover, .address-box:hover {
+    border-color: #0099cc;  /* Light blue on hover */
+    background-color: #f0fbff;  /* Light blue background */
+}
+
+/* Address box height and scroll */
+.address-box {
+    height: 90px;
+    resize: none;
+    overflow-y: auto;
+}
+
+/* File input with styling and hover effect */
+input[type="file"] {
+    border: none;
+    padding: 10px;
+    background-color: #f0f4f8;  /* Soft light background */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+input[type="file"]:hover {
+    background-color: #d1e7ff;  /* Soft blue on hover */
+    transform: scale(1.05);  /* Slight scale effect */
+}
+
+/* Button with neon effect */
+.neon-button {
+    background: transparent;
+    color: #00bcd4;
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px #00bcd4;
+    transition: 0.3s ease;
+}
+
+.neon-button:hover {
+    box-shadow: 0 0 20px #00bcd4;
+    background: rgba(0, 188, 212, 0.1);
+    cursor: pointer;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .grid-form {
+        grid-template-columns: 1fr;
+    }
+    .dhead {
+        font-size: 2rem;
+    }
+}
